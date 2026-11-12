@@ -42,7 +42,14 @@ export const ConsultantsSection: React.FC<ConsultantsSectionProps> = ({
                   <img
                     src={consultant.portraitUrl}
                     alt={consultant.name}
+                    referrerPolicy="no-referrer"
                     className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg object-cover border border-[#C3A36B]/40 shrink-0 shadow-xs"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      if (!target.src.includes('1794339703301')) {
+                        target.src = '/src/assets/images/legal_consultant_portrait_1794339703301.jpg';
+                      }
+                    }}
                   />
                   <div className="space-y-1">
                     <div className="text-[11px] uppercase tracking-wider text-[#C3A36B] font-semibold">

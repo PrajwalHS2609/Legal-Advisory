@@ -24,7 +24,14 @@ export const ConsultantDetailModal: React.FC<ConsultantDetailModalProps> = ({
             <img
               src={consultant.portraitUrl}
               alt={consultant.name}
+              referrerPolicy="no-referrer"
               className="w-16 h-16 rounded-full object-cover border-2 border-[#C3A36B]/50 shrink-0"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                if (!target.src.includes('1794339703301')) {
+                  target.src = '/src/assets/images/legal_consultant_portrait_1794339703301.jpg';
+                }
+              }}
             />
             <div>
               <div className="text-xs uppercase tracking-widest text-[#C3A36B] font-semibold">

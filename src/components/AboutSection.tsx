@@ -20,10 +20,16 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             <div className="relative">
               <div className="rounded-lg overflow-hidden border border-[#E9E3D9] shadow-xl bg-white">
                 <img
-                  src="/src/assets/images/legal_about_consultation_1794339703172.jpg"
+                  src="/images/legal_about_consultation.jpg"
                   alt="Senior legal advisors reviewing strategic corporate agreements in private conference"
                   referrerPolicy="no-referrer"
                   className="w-full h-[420px] sm:h-[500px] object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (!target.src.includes('1794339703172')) {
+                      target.src = '/src/assets/images/legal_about_consultation_1794339703172.jpg';
+                    }
+                  }}
                 />
               </div>
 

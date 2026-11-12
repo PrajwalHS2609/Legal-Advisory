@@ -85,14 +85,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="relative rounded-lg overflow-hidden border border-[#C3A36B]/30 shadow-2xl bg-[#202F46]">
               {/* Actual Generated Image with fallback */}
               <img
-                src="/src/assets/images/legal_hero_office_1794339701100.jpg"
+                src="/images/legal_hero_office.jpg"
                 alt="Aegis & Vance executive legal consultancy conference room overlooking modern metropolitan skyline"
                 referrerPolicy="no-referrer"
                 className="w-full h-[360px] sm:h-[440px] object-cover"
                 onError={(e) => {
-                  // Fallback styling if image fails
-                  const target = e.target as HTMLElement;
-                  target.style.display = 'none';
+                  const target = e.target as HTMLImageElement;
+                  if (!target.src.includes('1794339701100')) {
+                    target.src = '/src/assets/images/legal_hero_office_1794339701100.jpg';
+                  }
                 }}
               />
               {/* Subdued Bottom Scrim for contrast */}

@@ -208,7 +208,14 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                           <img
                             src={consultant.portraitUrl}
                             alt={consultant.name}
+                            referrerPolicy="no-referrer"
                             className="w-10 h-10 rounded-full object-cover border border-[#C3A36B]/40 shrink-0"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              if (!target.src.includes('1794339703301')) {
+                                target.src = '/src/assets/images/legal_consultant_portrait_1794339703301.jpg';
+                              }
+                            }}
                           />
                           <div>
                             <div className="text-sm font-medium text-white group-hover:text-[#D8B980]">
