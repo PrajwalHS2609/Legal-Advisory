@@ -1,0 +1,6 @@
+{
+  "name": "Aegis & Vance Legal Advisory",
+  "description": "Sophisticated modern legal consultancy providing authoritative corporate advisory, contract drafting, regulatory compliance, and discreet legal solutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
